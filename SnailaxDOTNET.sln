@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailaxDOTNET", "SnailaxDOTNET\SnailaxDOTNET.csproj", "{DF1795BD-1197-4656-9D43-C097D4B13A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailaxNETTester", "SnailaxNETTester\SnailaxNETTester.csproj", "{A45D7DF6-3606-49A5-A39F-6F608611A9A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF1795BD-1197-4656-9D43-C097D4B13A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1795BD-1197-4656-9D43-C097D4B13A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1795BD-1197-4656-9D43-C097D4B13A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1795BD-1197-4656-9D43-C097D4B13A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45D7DF6-3606-49A5-A39F-6F608611A9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45D7DF6-3606-49A5-A39F-6F608611A9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45D7DF6-3606-49A5-A39F-6F608611A9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45D7DF6-3606-49A5-A39F-6F608611A9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D590653-3032-4630-9BE7-58E0310B0E10}
+	EndGlobalSection
+EndGlobal
