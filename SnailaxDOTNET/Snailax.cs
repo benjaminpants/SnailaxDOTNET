@@ -260,6 +260,12 @@ namespace SnailaxDOTNET
 			}
 		}
 
+		public int[] GetGridPosition()
+		{
+			int[] offsets = Snailax.GetObjectOffset(Object);
+			return new int[] { (x - offsets[0]) / 60, (y - offsets[2]) / 60 };
+		}
+
 		public string Serialize()
 		{
 			return Object + ":" + x.ToString() + "," + y.ToString() + "," + (Snailax.ParseRotation(Object) ? rotation.ToString() + "," : "");
