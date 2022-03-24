@@ -263,7 +263,7 @@ namespace SnailaxDOTNET
 		public int[] GetGridPosition()
 		{
 			int[] offsets = Snailax.GetObjectOffset(Object);
-			return new int[] { (x - offsets[0]) / 60, (y - offsets[2]) / 60 };
+			return new int[] { (x - offsets[0]) / 60, (y - offsets[1]) / 60 };
 		}
 
 		public string Serialize()
