@@ -23,6 +23,10 @@ namespace SnailaxDOTNET
 
 		public float RoomMultiplierY = 1f;
 
+		public bool DarkLevel = false;
+
+		public int DanceInterval = 0;
+
 		public List<Tile> Tiles = new List<Tile>();
 
 		public int RoomSizeX
@@ -111,6 +115,16 @@ namespace SnailaxDOTNET
 			{
 				Song = (Songs)int.Parse(header_data[13]);
 				Theme = (Themes)int.Parse(header_data[14]);
+			}
+			if (version_id == 4)
+            {
+				version_id = 5;
+			}
+			else
+            {
+				string[] funny_split = header_data[15].Split(',');
+				DarkLevel = funny_split[1] == "1";
+				DanceInterval = int.Parse(funny_split[0]);
 			}
 			all_data_sections[1] = all_data_sections[1].Replace("\r",string.Empty);
 			string[] level_data = all_data_sections[1].Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
@@ -235,7 +249,7 @@ namespace SnailaxDOTNET
 			{ "obj_sh_gun4", new int[] { 30, 60 } },
 		};
 
-		public const byte LatestLevelFormat = 4;
+		public const byte LatestLevelFormat = 5;
 	}
 
 
@@ -245,10 +259,11 @@ namespace SnailaxDOTNET
 		public int x = 0;
 		public int y = 0;
 		public float rotation = 0f;
+		public bool Corrupted = false;
+		public float YScale = 1f;
 
 		public Tile(string toparse)
 		{
-			Console.WriteLine(toparse);
 			string[] name_and_data = toparse.Split(':');
 			string[] splits = name_and_data[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 			Object = name_and_data[0];
@@ -257,6 +272,15 @@ namespace SnailaxDOTNET
 			if (Snailax.ParseRotation(Object))
 			{
 				rotation = float.Parse(splits[2]);
+			}
+			else if (Object == "obj_power_generator" || Object == "obj_antenna" || Object == "obj_antenna_big_range" || Object == "obj_antenna_floaty")
+			{
+				Corrupted = int.Parse(splits[2]) == 1;
+			}
+			else if (Object == "obj_door")
+			{
+				rotation = float.Parse(splits[2]);
+				YScale = float.Parse(splits[3]);
 			}
 		}
 
